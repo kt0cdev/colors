@@ -1,0 +1,6 @@
+#color-list .swatch{
+	height: 100px;
+}
+#color-list .color-name{
+	text-transform: capitalize;
+}
