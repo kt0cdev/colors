@@ -4,7 +4,9 @@ var ColorApp = angular.module('ColorApp', [
   'ngRoute',
   'colorServices',
   'colorControllers',
-  'colorDirectives'
+  'colorSwatch',
+  'newBtn',
+  'saveBtn'
 ]);
 
 
@@ -15,12 +17,12 @@ ColorApp.config(['$routeProvider',
         templateUrl: 'partials/color-list.html',
         controller: 'colorCtrl'
       }).
-      when('/colors/color-picker', {
-        templateUrl: 'partials/color-picker.html',
+      when('/colors/blend', {
+        templateUrl: 'partials/color-blend.html',
         controller: 'colorCtrl'
       }).
      otherwise({
-        templateUrl: 'partials/color-list.html',
+        templateUrl: 'partials/blend.html',
         controller: 'colorCtrl'
       });
   }]);
