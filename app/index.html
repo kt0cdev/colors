@@ -8,20 +8,26 @@
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
 
     <script src="js/app.js"></script>
     <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
 
   </head>
   <body>
     <div class="container-fluid">
-      <header>
-        <h1>Color Blending App</h1>
-      </header>
-      <section ng-controller="colorCtrl">
-      <p>whatever</p>
-      </section>
+      <div class="row">
+        <div class="col-md-12">
+          <header>
+            <h1>Color Blending App</h1>
+          </header>
+        </div>
+      </div>
+      <div class="row">
+        <div ng-view class="col-md-12"></div>
+      </div>
     </div>
   </body>
 </html>

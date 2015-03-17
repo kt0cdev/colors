@@ -1,30 +1,11 @@
-[
-	{
-		color: "red",
-		value: "#f00"
-	},
-	{
-		color: "green",
-		value: "#0f0"
-	},
-	{
-		color: "blue",
-		value: "#00f"
-	},
-	{
-		color: "cyan",
-		value: "#0ff"
-	},
-	{
-		color: "magenta",
-		value: "#f0f"
-	},
-	{
-		color: "yellow",
-		value: "#ff0"
-	},
-	{
-		color: "black",
-		value: "#000"
-	}
-]
+{"red": {
+  "hex": "ff0000",
+  "name": "red"
+},
+"yellow": {
+  "hex": "ffff00",
+  "name": "yellow"
+},"blue": {
+  "hex": "000ff",
+  "name": "blue"
+}}
