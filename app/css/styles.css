@@ -2,12 +2,16 @@
 .blend{
 	border: 1px solid rgba(0, 0, 0, 0.12);
 	box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-	height: 100px;
-	margin-bottom: 10px;
+}
+.swatch{
+	height: 60px;
+	width: 60px;
+	float: left;
+	margin-right: 15px;
 }
 .blend{
-	height: 275px;
+	height: 200px;
+	margin-bottom: 15px;
 }
-.color-name{
-	text-transform: capitalize;
-}
+
+

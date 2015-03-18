@@ -1,11 +1,21 @@
-<div ng-controller="colorCtrl" class="col-md-12">
-	<div class="color-list">
-		<swatch ng-repeat="color in colors" class="col-md-1"></swatch>
-	</div>
-	<div class="col-md-4">
-		<div class="blend"></div>
-		<newbtn></newbtn>
-		<savebtn></savebtn>
-	</div>
+<div class="col-md-4">
+  <div ng-controller="colorCtrl">
+    <div class="color-list">
+      <swatch ng-repeat="color in colors"></swatch>
+    </div>
+  </div>
+</div>
+<div class="col-md-4">
+  <div ng-controller="blendCtrl">
+    <div ng-controller="modalDemoCtrl">
+      <div class="blend"></div>
+        <div class="blend-controls">
+          <input type="button" ng-click="blendMode=!blendMode" ng-hide="blendMode"class="new-btn" value="New blend" />
+          <input type="button" ng-click="blendMode=!blendMode" ng-show="blendMode" class="save-btn" value="Save blend" />
+          <input type="button" ng-click="open()" ng-show="blendMode" class="cancel-btn" value="Cancel blend" />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 

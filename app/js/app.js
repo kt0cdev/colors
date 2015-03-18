@@ -1,14 +1,13 @@
 'use strict';
 
 var ColorApp = angular.module('ColorApp', [
+	'ui.bootstrap',
   'ngRoute',
-  'colorServices',
-  'colorControllers',
+  'colorService',
+  'colorController',
   'colorSwatch',
-  'newBtn',
-  'saveBtn'
+  'blendController'
 ]);
-
 
 ColorApp.config(['$routeProvider',
   function($routeProvider) {
@@ -22,7 +21,7 @@ ColorApp.config(['$routeProvider',
         controller: 'colorCtrl'
       }).
      otherwise({
-        templateUrl: 'partials/blend.html',
+        templateUrl: 'partials/color-blend.html',
         controller: 'colorCtrl'
       });
   }]);

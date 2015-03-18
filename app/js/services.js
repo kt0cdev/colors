@@ -1,6 +1,6 @@
 'use strict';
 
-var colorServices = angular.module('colorServices', [])
+var colorServics = angular.module('colorService', [])
 	.factory('colorFactory', function($http) {
 	 return{
 	  getColors : function() {
