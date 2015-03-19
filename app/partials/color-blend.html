@@ -6,14 +6,12 @@
   </div>
 </div>
 <div class="col-md-4">
-  <div ng-controller="blendCtrl">
-    <div ng-controller="modalDemoCtrl">
-      <div class="blend"></div>
-        <div class="blend-controls">
-          <input type="button" ng-click="blendMode=!blendMode" ng-hide="blendMode"class="new-btn" value="New blend" />
-          <input type="button" ng-click="blendMode=!blendMode" ng-show="blendMode" class="save-btn" value="Save blend" />
-          <input type="button" ng-click="open()" ng-show="blendMode" class="cancel-btn" value="Cancel blend" />
-        </div>
+  <div>
+    <div class="blend"></div>
+      <div class="blend-controls" ng-controller="modalCtrl" ng-controller="blendCtrl">
+        <input type="button" ng-click="blendMode=!blendMode" ng-hide="blendMode" class="btn btn-primary" value="New blend" />
+        <input type="button" ng-click="blendMode=!blendMode" ng-show="blendMode" class="btn btn-primary" value="Save blend" />
+        <input type="button" ng-click="open('color-blend-cancel-alert')" ng-show="blendMode" class="btn btn-warning" value="Cancel blend" />
       </div>
     </div>
   </div>
