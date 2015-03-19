@@ -1,6 +1,25 @@
 'use strict';
 
-var colorServics = angular.module('colorService', [])
+var sharedServices = angular.module('sharedServices', [])
+	.factory('sharedFactory', function($rootScope) {
+
+		var sharedService = {};
+		sharedService.blendMode = false;
+
+		sharedService.blendModeToggleRoot = function(blendMode){
+			this.blendMode = blendMode;
+			this.broadcastItem();
+		}
+
+		sharedService.broadcastItem = function() {
+      $rootScope.$broadcast('handleBroadcast');
+    };
+
+		return sharedService;
+
+	});;
+
+var colorService = angular.module('colorService', [])
 	.factory('colorFactory', function($http) {
 	 return{
 	  getColors : function() {
@@ -11,3 +30,5 @@ var colorServics = angular.module('colorService', [])
 	  }
 	 }
 	});
+
+

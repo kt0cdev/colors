@@ -3,10 +3,14 @@
 var ColorApp = angular.module('ColorApp', [
 	'ui.bootstrap',
   'ngRoute',
+  'sharedServices',
   'colorService',
   'colorController',
+  'blendController',
   'colorSwatch',
-  'blendController'
+  'newBtn',
+  'saveBtn',
+  'cancelBtn'
 ]);
 
 ColorApp.config(['$routeProvider',
