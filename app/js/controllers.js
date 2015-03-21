@@ -8,12 +8,26 @@ var colorController = angular.module('colorController', [])
 		});
 	});
 
-var blendController = angular.module('blendController',[])
-	.controller('blendCtrl', function($scope, sharedFactory) {
-		$scope.blendModeToggle = function() {
-      sharedFactory.blendMode = !sharedFactory.blendMode;
-      sharedFactory.blendModeToggleRoot(sharedFactory.blendMode);
+var swatchController = angular.module('swatchController',[])
+	.controller('swatchCtrl', function($scope, sharedFactory, blendFactory) {
+		$scope.blend = function(clr) {
+			if (!sharedFactory.blendMode) {
+	      sharedFactory.blendMode = !sharedFactory.blendMode;
+	      sharedFactory.broadcastBlend(sharedFactory.blendMode);
+	      var newBlend = new blendFactory.blendObj;
+	      alert("blend instantiated");
+     	} else {
+     		alert("blend in progress");
+     	}
+			alert(clr);
     };
+    $scope.$on('handleBroadcast', function() {
+      $scope.blendMode = sharedFactory.blendMode;
+    });
+	});
+
+var blendBtnController = angular.module('blendBtnController',[])
+	.controller('blendBtnCtrl', function($scope, sharedFactory) {
     $scope.$on('handleBroadcast', function() {
       $scope.blendMode = sharedFactory.blendMode;
     });
@@ -37,7 +51,7 @@ angular.module('ui.bootstrap').controller('modalCtrl', function ($scope, $modal,
 angular.module('ui.bootstrap').controller('ModalInstanceCtrl', function ($scope, $modalInstance, sharedFactory) {
 	$scope.ok = function () {
 		sharedFactory.blendMode = !sharedFactory.blendMode;
-    sharedFactory.blendModeToggleRoot(sharedFactory.blendMode);
+    sharedFactory.broadcastBlend(sharedFactory.blendMode);
 		$modalInstance.close();
 	};
 	$scope.cancel = function () {

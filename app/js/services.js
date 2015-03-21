@@ -6,7 +6,7 @@ var sharedServices = angular.module('sharedServices', [])
 		var sharedService = {};
 		sharedService.blendMode = false;
 
-		sharedService.blendModeToggleRoot = function(blendMode){
+		sharedService.broadcastBlend = function(blendMode){
 			this.blendMode = blendMode;
 			this.broadcastItem();
 		}
@@ -17,7 +17,7 @@ var sharedServices = angular.module('sharedServices', [])
 
 		return sharedService;
 
-	});;
+	});
 
 var colorService = angular.module('colorService', [])
 	.factory('colorFactory', function($http) {
@@ -29,6 +29,17 @@ var colorService = angular.module('colorService', [])
 	    })
 	  }
 	 }
+	});
+
+var blendServices = angular.module('blendServices', [])
+	.factory('blendFactory', function() {
+
+		blendServices.blendObj = function() {
+			this.layers = {};
+		}
+
+		return blendServices;
+
 	});
 
 
